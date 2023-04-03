@@ -1,6 +1,7 @@
 import { defineUserConfig, defaultTheme } from "vuepress";
 
 export default defineUserConfig({
+  head: [["link", { rel: "icon", href: "/images/favicon.ico" }]],
   lang: "zh-CN",
   title: "SINEA前端工坊",
   description: "前端开发学习备忘",
