@@ -7,6 +7,8 @@ export default defineUserConfig({
   description: "前端开发学习备忘",
   theme: defaultTheme({
     logo: "/images/favicon.ico",
+    contributors: false,
+    lastUpdated: false,
     navbar: [
       {
         text: "笔记",
