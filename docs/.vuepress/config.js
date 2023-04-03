@@ -1,7 +1,6 @@
 import { defineUserConfig, defaultTheme } from "vuepress";
 
 export default defineUserConfig({
-  base: "/note/",
   lang: "zh-CN",
   title: "SINEA前端工坊",
   description: "前端开发学习备忘",
