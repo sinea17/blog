@@ -61,7 +61,7 @@ export default defineUserConfig({
       "/wiki/": [
         {
           text: "其他",
-          children: ["/wiki/设计模式"],
+          children: ["/wiki/设计模式", "/wiki/TypeScript"],
         },
       ],
     },
