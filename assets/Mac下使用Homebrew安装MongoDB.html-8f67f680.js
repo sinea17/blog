@@ -1,0 +1,28 @@
+import{_ as o,M as d,p as i,q as l,R as e,t as n,N as s,a1 as r}from"./framework-5866ffd3.js";const c={},t=e("h1",{id:"mac-下使用-homebrew-安装-mongodb",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#mac-下使用-homebrew-安装-mongodb","aria-hidden":"true"},"#"),n(" Mac 下使用 Homebrew 安装 MongoDB")],-1),u={href:"https://www.mongodb.com/",target:"_blank",rel:"noopener noreferrer"},b={href:"https://docs.mongodb.com/manual/administration/install-community/",target:"_blank",rel:"noopener noreferrer"},m=r(`<p>打开终端更新 brew</p><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>brew update
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>安装 MongoDB</p><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>brew install mongodb
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>安装完成后会提示如何启动</p><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>Then to load mongodb now:
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+Or, if you don’t want/need launchctl, you can just run:
+mongod —config /usr/local/etc/mongod.conf
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>配置 mongod.conf（默认），文件位置参考上方</p><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>systemLog://操作记录打印目录
+  destination: file
+  path: /usr/local/var/log/mongodb/mongo.log
+  logAppend: true
+storage://存储数据目录
+  dbPath: /usr/local/var/mongodb
+net://网络地址
+  bindIp: 127.0.0.1
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>启动 MongoDB</p><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>mongod —config /usr/local/etc/mongod.conf
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>新建终端窗口输入<code>mongo</code>连接到<code>MongoDB service</code>，连接成功：</p><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>MongoDB shell version v3.4.4
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.4
+Server has startup warnings:
+2017-06-12T14:39:45.492+0800 I CONTROL  [initandlisten]
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在该窗口下输入命令进行操作数据库</p><ul><li>创建/切换数据库</li></ul><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>use baseTestName
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>若没有后续操作，空数据库将被系统删除</p><ul><li>插入数据到表 tableName</li></ul><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>db.tableName.insert({name:&#39;xxx&#39;})
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul><li>查看数据</li></ul><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>db.tableName.find()
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>返回：</p><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>{ &quot;_id&quot; : ObjectId(&quot;55e407e120d5b7acf4301d3b&quot;), &quot;name&quot; : &quot;xxx&quot; }
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul><li>查看数据库</li></ul><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>show dbs
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul><li>查看表</li></ul><div class="language-base line-numbers-mode" data-ext="base"><pre class="language-base"><code>show collections
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="mongodb-可视化工具" tabindex="-1"><a class="header-anchor" href="#mongodb-可视化工具" aria-hidden="true">#</a> MongoDB 可视化工具</h3>`,27),v={href:"https://mongobooster.com/",target:"_blank",rel:"noopener noreferrer"},g={href:"http://www.mongovue.com",target:"_blank",rel:"noopener noreferrer"},p={href:"https://robomongo.org/",target:"_blank",rel:"noopener noreferrer"},h={href:"https://studio3t.com/",target:"_blank",rel:"noopener noreferrer"},_={href:"https://www.mongodb.com/download-center",target:"_blank",rel:"noopener noreferrer"};function f(x,w){const a=d("ExternalLinkIcon");return i(),l("div",null,[t,e("p",null,[e("a",u,[n("MongoDB 官网"),s(a)])]),e("p",null,[e("a",b,[n("MongoDB 官方安装指南"),s(a)])]),m,e("ul",null,[e("li",null,[e("a",v,[n("MongoBooster"),s(a)]),n(" 有提供免费版")]),e("li",null,[e("a",g,[n("MongoVUE"),s(a)]),n(" 挂掉了")]),e("li",null,[e("a",p,[n("Robomongo"),s(a)])]),e("li",null,[e("a",h,[n("Studio 3T"),s(a)]),n(" 原名 MongoChef")])]),e("p",null,[n("更多 MongoDB 相关可以到"),e("a",_,[n("MongoDB Download Center"),s(a)]),n(" 了解下载")])])}const B=o(c,[["render",f],["__file","Mac下使用Homebrew安装MongoDB.html.vue"]]);export{B as default};

@@ -1,0 +1,24 @@
+import{_ as a,M as t,p as d,q as r,Q as c,R as n,t as e,N as s,a1 as l}from"./framework-5866ffd3.js";const o={},u=l(`<h1 id="jekyll-踩坑记" tabindex="-1"><a class="header-anchor" href="#jekyll-踩坑记" aria-hidden="true">#</a> Jekyll 踩坑记</h1><p>以下都是基于 OS X 系统操作的</p><h3 id="安装jekyll" tabindex="-1"><a class="header-anchor" href="#安装jekyll" aria-hidden="true">#</a> 安装<code>jekyll</code></h3><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>gem install jekyll
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>`,4),v=l(`<p>可能提示:</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>While executing gem ... (Gem::FilePermissionError)
+    You don&#39;t have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>原因</p><blockquote><p>Apparently with OSX el Capitan, there is a new security function that prevents you from modifying system files called Rootless.</p></blockquote>`,4),m={href:"https://ruby-china.org/wiki/rvm-guide",target:"_blank",rel:"noopener noreferrer"},b={href:"http://usabilityetc.com/articles/ruby-on-mac-os-x-with-rvm/",target:"_blank",rel:"noopener noreferrer"},p=l(`<div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>gem install jekyll
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>解决方法二：</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>sudo gem install jekyll
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>安装依赖包 错误提示 \`\`/usr/bin/***\`目录没有权限</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>ERROR:  While executing gem ... (Errno::EPERM)
+    Operation not permitted - /usr/bin/***
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>方法 1：可以通过修改目录权限解决，安装完毕后将<code>/usr/bin</code>权限设置回操作前的权限，否则下次终端启动时可能报错，请使用 Mac 磁盘工具修复</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>sudo chmod -R 777 /usr/bin
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>`,7),g=n("li",null,[n("p",null,[e("方法 2：可以安装放在"),n("code",null,"/usr/local/bin"),e("目录下，这样会优先调用新程序。因为环境变量的"),n("code",null,"PTAH"),e("中是"),n("code",null,"PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"),e(" (Ps：治标不治本，下一次还会再出现)")])],-1),h={href:"http://www.jianshu.com/p/935484cc2d40",target:"_blank",rel:"noopener noreferrer"},x=l(`<div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>brew install ruby
+
+//再安装jekyll
+gem install jekyll
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>sudo gem install -n /usr/local/bin jekyll
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>利用已有的开源 Jekyll 项目</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>git clone https://github.com/barryclark/jekyll-now
+cd jekyll-now
+jekyll build
+jekyll serve
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,4),_=n("code",null,"Gemfile",-1),y={href:"https://github.com/nielsenramon/chalk",target:"_blank",rel:"noopener noreferrer"},k=l(`<p>提交修改：</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>git add .
+git commit -m &quot;describe&quot;
+git push
+
+//克隆的与原仓库地址文件冲突可采用强制push，原仓库文件会被完全覆盖
+git push -u origin master -f
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2);function f(j,w){const i=t("ExternalLinkIcon");return d(),r("div",null,[u,c("more"),v,n("p",null,[e("解决办法一：使用 "),n("a",m,[e("RVM"),s(i)]),e(" 安装 ruby "),n("a",b,[e("HOW TO INSTALL RUBY ON MAC OS X WITH RVM"),s(i)]),e(" 安装完成后，再执行命令")]),p,n("ul",null,[g,n("li",null,[n("p",null,[e("方法 3："),n("a",h,[e("参考方法"),s(i)]),e(" 更新 ruby")])])]),x,n("p",null,[e("上面的主题地址亲测无问题，克隆有的主题会出现一些问题，主要是"),_,e("导致的，比如这款"),n("a",y,[e("chalk"),s(i)]),e("。")]),k])}const E=a(o,[["render",f],["__file","Jekyll踩坑记.html.vue"]]);export{E as default};

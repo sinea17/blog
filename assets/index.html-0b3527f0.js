@@ -1,0 +1,1 @@
+import{_ as t,p as n,q as o,R as e,t as a}from"./framework-5866ffd3.js";const c={},s=e("h1",{id:"百科",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#百科","aria-hidden":"true"},"#"),a(" 百科")],-1),r=e("blockquote",null,[e("p",null,"开发技术相关")],-1),_=[s,r];function d(l,i){return n(),o("div",null,_)}const u=t(c,[["render",d],["__file","index.html.vue"]]);export{u as default};

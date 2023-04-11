@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-c82b7cb4","path":"/note/2018/JavaScript%E5%BC%80%E5%8F%91%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html","title":"JavaScript开发注意事项","lang":"zh-CN","frontmatter":{"title":"JavaScript开发注意事项","date":"2018-01-07T00:00:00.000Z"},"headers":[],"git":{},"filePathRelative":"note/2018/JavaScript开发注意事项.md"}');export{t as data};

@@ -1,0 +1,3 @@
+import{_ as l,M as n,p as d,q as r,N as s,V as t,R as e,t as a}from"./framework-5866ffd3.js";const i={},u=e("div",{class:"language-bash line-numbers-mode","data-ext":"sh"},[e("pre",{class:"language-bash"},[e("code",null,[e("span",{class:"token comment"},"# 开始写作"),a(`
+`),e("span",{class:"token function"},"pnpm"),a(` docs:dev
+`)])]),e("div",{class:"line-numbers","aria-hidden":"true"},[e("div",{class:"line-number"}),e("div",{class:"line-number"})])],-1);function _(m,p){const o=n("CodeGroupItem"),c=n("CodeGroup");return d(),r("div",null,[s(c,null,{default:t(()=>[s(o,{title:"PNPM",active:""},{default:t(()=>[u]),_:1})]),_:1})])}const h=l(i,[["render",_],["__file","index.html.vue"]]);export{h as default};
